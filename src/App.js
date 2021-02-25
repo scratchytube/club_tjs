@@ -8,6 +8,7 @@ import Recipes from './Pages/Recipes'
 import Stores from './Pages/Stores'
 import Resources from './Pages/Resources'
 import Profile from './Pages/Profile'
+import Auth from './Pages/Auth'
 // CSS
 import './App.css';
 
@@ -35,6 +36,9 @@ const App = () => {
           </Route>
           <Route path="/profile">
             <Profile />
+          </Route>
+          <Route path="/auth">
+            <Auth/>
           </Route>
         </Switch>
     </div>
