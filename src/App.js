@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addItems } from './Components/redux/recipe'
 // Pages
 import Header from './Components/Header'
 import Home from './Pages/Home'
@@ -14,6 +16,15 @@ import './App.css';
 
 
 const App = () => {
+  const dispatch = useDispatch()
+
+    useEffect(() => {
+        fetch('http://localhost:3000/api/v1/recipes')
+        .then((r) => r.json())
+        .then((recipeArray) => {
+            dispatch(addItems(recipeArray))
+        })
+    }, [dispatch])
 
   return (
     <div className="App">
