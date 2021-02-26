@@ -9,7 +9,7 @@ const Recipe = () => {
     
     const recipes = useSelector((state) => state.recipe.items)
 
-    console.log(recipes)
+    // console.log(recipes)
 
     return (
         <div className="recipe" >

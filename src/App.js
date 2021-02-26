@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addItems } from './Components/redux/recipe'
+import { addGoods } from './Components/redux/good'
 // Pages
 import Header from './Components/Header'
 import Home from './Pages/Home'
@@ -18,12 +19,22 @@ import './App.css';
 const App = () => {
   const dispatch = useDispatch()
 
+    // Recipe Fetch
     useEffect(() => {
         fetch('http://localhost:3000/api/v1/recipes')
         .then((r) => r.json())
         .then((recipeArray) => {
             dispatch(addItems(recipeArray))
         })
+    }, [dispatch])
+
+    // Goods Fetch
+    useEffect(() => {
+      fetch('http://localhost:3000/api/v1/goods')
+      .then((r) => r.json())
+      .then((goodsArray) => {
+        dispatch(addGoods(goodsArray))
+      })
     }, [dispatch])
 
   return (
