@@ -9,13 +9,15 @@ const Recipe = () => {
     
     const recipes = useSelector((state) => state.recipe.items)
 
-    // console.log(recipes)
+    const recipeArray = recipes.map((oneRecipe) => (
+        <RecipeCard key={oneRecipe.id} oneRecipe={oneRecipe} />
+    ))
 
     return (
         <div className="recipe" >
-            <h2>it me from the recipe container</h2>
+            <h2>Here's some recipes TJ's fam</h2>
             <RecipeFilterBar />
-            <RecipeCard />
+            {recipeArray}
             <RecipeFavs />
         </div>
     )

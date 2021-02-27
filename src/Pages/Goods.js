@@ -9,12 +9,14 @@ const Goods = () => {
 
     const goods = useSelector((state) => state.good.items)
 
-    console.log(goods)
+    const singleGoodCard = goods.map((oneGood) => (
+        <GoodsCard key={oneGood.id} oneGood={oneGood}/>
+    ))
 
     return(
         <div className="goods">
-            <h2>it me from the goods page</h2>
-            <GoodsCard />
+            <h2>Ah yeah show me the goods</h2>
+            {singleGoodCard}
             <NewGoods />
             <GoodsFavorites />
         </div>

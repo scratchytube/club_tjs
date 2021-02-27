@@ -1,9 +1,13 @@
 import React from 'react'
 
-const GoodsCard = () => {
+const GoodsCard = ({ oneGood }) => {
+    const { name, image, likes} = oneGood
+    
     return (
         <div>
-            <h2>goods card with attributes here</h2>
+            <h3>{name}</h3>
+            <img src={image} alt={name} />
+            <button>{likes}</button>
         </div>
     )
 }

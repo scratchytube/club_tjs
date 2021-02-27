@@ -1,9 +1,14 @@
 import React from 'react' 
 
-const RecipeCard = () => {
+const RecipeCard = ({ oneRecipe }) => {
+    const { title, image, ingredients, directions} = oneRecipe
     return (
         <div>
-            <h2>all the recipe cards will go here</h2>
+            <h3>{title}</h3>
+            <img src={image} alt={title} />
+            <h5>{ingredients}</h5>
+            <p>{directions}</p>
+
         </div>
     )
 }
