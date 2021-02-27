@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addItems } from './Components/redux/recipe'
@@ -19,7 +19,22 @@ import './App.css';
 const App = () => {
   const dispatch = useDispatch()
 
-    // Recipe Fetch
+  // fake auth
+  const [user, setUser] = useState(null)
+  //fake auth
+  useEffect(() => {
+    fetch("http://localhost:3000/api/v1/me")
+    .then((r) => r.json())
+    .then(issaMe => {
+      setUser(issaMe)
+    })
+  }, [])
+  // fake auth
+
+  console.log(user)
+    
+  
+  // Recipe Fetch
     useEffect(() => {
         fetch('http://localhost:3000/api/v1/recipes')
         .then((r) => r.json())
@@ -39,7 +54,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
+      <Header user={user} />
         <Switch>
           <Route exact path="/" >
             <Home />
@@ -60,7 +75,7 @@ const App = () => {
             <Profile />
           </Route>
           <Route path="/auth">
-            <Auth/>
+            <Auth setUser={setUser} />
           </Route>
         </Switch>
     </div>
