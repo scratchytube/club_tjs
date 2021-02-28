@@ -3,6 +3,8 @@ import { Route, Switch } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addItems } from './Components/redux/recipe'
 import { addGoods } from './Components/redux/good'
+import { addFavGoods } from './Components/redux/fav_good'
+import { addRecipes } from './Components/redux/fav_recipe'
 // Pages
 import Header from './Components/Header'
 import Home from './Pages/Home'
@@ -49,6 +51,24 @@ const App = () => {
       .then((r) => r.json())
       .then((goodsArray) => {
         dispatch(addGoods(goodsArray))
+      })
+    }, [dispatch])
+
+    // FavGoods Fetch
+    useEffect(() => {
+      fetch("http://localhost:3000/api/v1/fav_goods")
+      .then((r) => r.json())
+      .then((favGoodsArray) => {
+        dispatch(addFavGoods(favGoodsArray))
+      })
+    }, [dispatch])
+
+    // FavRecipes Fetch
+    useEffect(() => {
+      fetch("http://localhost:3000/api/v1/fav_recipes")
+      .then((r) => r.json())
+      .then((favoriteRecipesArray) => {
+        dispatch(addRecipes(favoriteRecipesArray))
       })
     }, [dispatch])
 
