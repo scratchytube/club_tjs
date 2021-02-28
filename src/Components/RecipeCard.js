@@ -8,7 +8,7 @@ const RecipeCard = ({ oneRecipe }) => {
             <img src={image} alt={title} />
             <h5>{ingredients}</h5>
             <p>{directions}</p>
-
+            <button>Add Me To Favorites!</button>
         </div>
     )
 }

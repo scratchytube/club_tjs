@@ -1,9 +1,13 @@
 import React from 'react' 
 
-const RecipeFilterBar = () => {
+const RecipeFilterBar = ({ setRecipeSearch }) => {
     return (
         <div>
-            <h2>filter filter Recipes</h2>
+            <input 
+            type="text"
+            placeholder="Type in an ingredient and we'll find a recipe with it"
+            onChange={(e) => setRecipeSearch(e.target.value)}
+            />
         </div>
     )
 }
