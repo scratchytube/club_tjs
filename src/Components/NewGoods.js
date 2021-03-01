@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
 
-const NewGoods = ({ handleToggleForm }) => {
-    const dispatch = useDispatch()
+const NewGoods = ({ handleToggleForm, onHandleNewGood }) => {
+    
     const [image, setImage] = useState('')
     const [name, setName] = useState('')
 
@@ -24,7 +23,7 @@ const NewGoods = ({ handleToggleForm }) => {
             })
             .then(response => response.json())
             .then(data => {
-            console.log('Success:', data);
+            onHandleNewGood(data);
             })
             handleToggleForm(false)
             setImage("")

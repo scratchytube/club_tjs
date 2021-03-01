@@ -8,6 +8,7 @@ const GoodsCard = ({ oneGood }) => {
             <h3>{name}</h3>
             <img src={image} alt={name} />
             <button>{likes}</button>
+            <button>Add to my Favorites</button>
         </div>
     )
 }
