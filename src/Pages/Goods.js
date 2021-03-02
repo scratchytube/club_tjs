@@ -13,14 +13,14 @@ const Goods = ({ user }) => {
     // goods array from redux
     const goods = useSelector((state) => state.good.items)
 
-    const singleGoodCard = goods.map((oneGood) => (
-        <GoodsCard key={oneGood.id} oneGood={oneGood} user={user} />
-    ))
-        
     const handleToggleForm = () => {
         setShowForm((showForm) => !showForm)
     }
 
+    const singleGoodCard = goods.map((oneGood) => (
+        <GoodsCard key={oneGood.id} oneGood={oneGood} user={user} />
+    ))
+        
     // adding a new good from the form
     const handleNewGood = newGood => {
         const brandNewGoodArray = [newGood, ...goods]

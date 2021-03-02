@@ -5,7 +5,7 @@ import RecipeFilterBar from '../Components/RecipeFilterBar'
 import RecipeCard from '../Components/RecipeCard'
 import RecipeFavs from '../Components/RecipeFavs'
 
-const Recipe = () => {
+const Recipe = ({ user }) => {
     const [recipeSearch, setRecipeSearch] = useState("")
     const recipes = useSelector((state) => state.recipe.items)
 
@@ -14,7 +14,7 @@ const Recipe = () => {
         oneRecipe.ingredients.toLowerCase().includes(recipeSearch.toLowerCase())
     ))
     .map((oneRecipe) => (
-        <RecipeCard key={oneRecipe.id} oneRecipe={oneRecipe} />
+        <RecipeCard key={oneRecipe.id} oneRecipe={oneRecipe} user={user} />
     ))
     
 
