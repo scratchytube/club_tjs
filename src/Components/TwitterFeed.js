@@ -6,7 +6,7 @@ const TwitterFeed = () => {
         <div>
             <TwitterTimelineEmbed
                 sourceType="profile"
-                screenName="TraderJoesList"
+                screenName="TraderJoesRants"
                 options={{height: 400}}
             />
         </div>

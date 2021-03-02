@@ -6,7 +6,7 @@ import GoodsCard from '../Components/GoodsCard'
 import NewGoods from '../Components/NewGoods'
 import GoodsFavorites from '../Components/GoodsFavorites'
 
-const Goods = () => {
+const Goods = ({ user }) => {
     const dispatch = useDispatch()
     // toggle Form state
     const [showForm, setShowForm] = useState(false)
@@ -14,7 +14,7 @@ const Goods = () => {
     const goods = useSelector((state) => state.good.items)
 
     const singleGoodCard = goods.map((oneGood) => (
-        <GoodsCard key={oneGood.id} oneGood={oneGood}/>
+        <GoodsCard key={oneGood.id} oneGood={oneGood} user={user} />
     ))
         
     const handleToggleForm = () => {
