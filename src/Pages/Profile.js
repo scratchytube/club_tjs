@@ -15,6 +15,7 @@ const Profile = () => {
     console.log(profileFavoriteGoods)
     console.log(myFavoriteRecipes)
 
+    // delete fav good from profile
     const onDeleteFavItem = (itemToDelete) => {
         const updatedFavGoodArray = profileFavoriteGoods.filter((otherGoods) => otherGoods.id !==itemToDelete.id )
         dispatch(addFavGoods(updatedFavGoodArray))
@@ -27,6 +28,7 @@ const Profile = () => {
     const allMyFavoriteRecipes = myFavoriteRecipes.map((rec) => (
         <ProfileFavoritesRecipes key={rec.id} recipes={rec.recipe}/>
     ))
+
 
     return (
         <div className="profile" >
