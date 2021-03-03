@@ -17,7 +17,8 @@ const Profile = () => {
 
     // delete fav good from profile
     const onDeleteFavItem = (itemToDelete) => {
-        const updatedFavGoodArray = profileFavoriteGoods.filter((otherGoods) => otherGoods.id !==itemToDelete.id )
+        console.log(itemToDelete)
+        const updatedFavGoodArray = profileFavoriteGoods.filter((good) => good.id !== itemToDelete.id )
         dispatch(addFavGoods(updatedFavGoodArray))
     }
     

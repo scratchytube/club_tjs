@@ -11,7 +11,6 @@ const ProfileFavoriteGoods = ({ item, onDeleteFavItem }) => {
         .then((r) => r.json())
         .then(() => {
             onDeleteFavItem(item)
-            console.log(item.id)
         })
     }
 
