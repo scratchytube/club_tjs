@@ -9,9 +9,15 @@ const favGoodsSlice = createSlice ({
     reducers: {
         addFavGoods: (state, action) => {
             state.goods = action.payload
+        },
+        deleteFavGood: (state, action) => {
+            // console.log(state.goods)
+            // console.log(action)
+            const updatedFavGoods = state.goods.filter(good => good.id !== action.payload.id)
+            state.goods = updatedFavGoods
         }
     }
 })
 
-export const { addFavGoods } = favGoodsSlice.actions
+export const { addFavGoods, deleteFavGood } = favGoodsSlice.actions
 export default favGoodsSlice.reducer 

@@ -1,13 +1,10 @@
 import React from 'react' 
 import { useSelector } from 'react-redux' 
-import { useDispatch } from 'react-redux'
-import { addFavGoods } from '../Components/redux/fav_good'
 //Components
 import ProfileFavoriteGoods from '../Components/ProfileFavoriteGoods'
 import ProfileFavoritesRecipes from '../Components/ProfileFavoritesRecipes'
 
 const Profile = () => {
-    const dispatch = useDispatch()
     // from redux
     const profileFavoriteGoods = useSelector((state) => state.favGoods.goods)
     const myFavoriteRecipes = useSelector((state) => state.favRecipes.myFavRecipes)
@@ -16,15 +13,15 @@ const Profile = () => {
     console.log(myFavoriteRecipes)
 
     // delete fav good from profile
-    const onDeleteFavItem = (itemToDelete) => {
-        console.log(itemToDelete)
-        const updatedFavGoodArray = profileFavoriteGoods.filter((good) => good.id !== itemToDelete.id )
-        dispatch(addFavGoods(updatedFavGoodArray))
-    }
+    // const onDeleteFavItem = (itemToDelete) => {
+    //     console.log(itemToDelete)
+    //     const updatedFavGoodArray = profileFavoriteGoods.filter((good) => good.id !== itemToDelete.id )
+    //     dispatch(addFavGoods(updatedFavGoodArray))
+    // }
     
     // our iterations from redux
     const allMyFavoriteItems = profileFavoriteGoods.map((item) => (
-        <ProfileFavoriteGoods key={item.id} item={item.good} onDeleteFavItem={onDeleteFavItem} />
+        <ProfileFavoriteGoods key={item.id} item={item.good} />
     ))
     const allMyFavoriteRecipes = myFavoriteRecipes.map((rec) => (
         <ProfileFavoritesRecipes key={rec.id} recipes={rec.recipe}/>

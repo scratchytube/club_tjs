@@ -1,16 +1,19 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { deleteFavGood } from '../Components/redux/fav_good'
 
-
-const ProfileFavoriteGoods = ({ item, onDeleteFavItem }) => {
+const ProfileFavoriteGoods = ({ item }) => {
     const { id, name, image, likes } = item
+    const dispatch = useDispatch()
 
-    const handleRemoveFavoriteItem = () => {
+    const handleRemoveFavoriteItem = (event) => {
+        event.preventDefault()
         fetch(`http://localhost:3000/api/v1/fav_goods/${id}`,{
             method: "DELETE",
         })
         .then((r) => r.json())
-        .then(() => {
-            onDeleteFavItem(item)
+        .then((item) => {
+            dispatch(deleteFavGood(item))
         })
     }
 
