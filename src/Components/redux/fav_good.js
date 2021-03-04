@@ -11,10 +11,9 @@ const favGoodsSlice = createSlice ({
             state.goods = action.payload
         },
         deleteFavGood: (state, action) => {
-            // console.log(state.goods)
-            // console.log(action)
-            const updatedFavGoods = state.goods.filter(good => good.id !== action.payload.id)
+            const updatedFavGoods = state.goods.filter((good) => good.id !== action.payload.id)
             state.goods = updatedFavGoods
+            console.log(updatedFavGoods)
         }
     }
 })

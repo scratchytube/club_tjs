@@ -9,7 +9,7 @@ const Profile = () => {
     const profileFavoriteGoods = useSelector((state) => state.favGoods.goods)
     const myFavoriteRecipes = useSelector((state) => state.favRecipes.myFavRecipes)
 
-    console.log(profileFavoriteGoods)
+    console.log("hiiii", profileFavoriteGoods)
     console.log(myFavoriteRecipes)
 
     // delete fav good from profile
@@ -21,7 +21,7 @@ const Profile = () => {
     
     // our iterations from redux
     const allMyFavoriteItems = profileFavoriteGoods.map((item) => (
-        <ProfileFavoriteGoods key={item.id} item={item.good} />
+        <ProfileFavoriteGoods key={item.id} item={item} />
     ))
     const allMyFavoriteRecipes = myFavoriteRecipes.map((rec) => (
         <ProfileFavoritesRecipes key={rec.id} recipes={rec.recipe}/>

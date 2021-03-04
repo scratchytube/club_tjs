@@ -3,17 +3,18 @@ import { useDispatch } from 'react-redux'
 import { deleteFavGood } from '../Components/redux/fav_good'
 
 const ProfileFavoriteGoods = ({ item }) => {
-    const { id, name, image, likes } = item
+    const { name, image, likes } = item.good
+    const { id } = item
     const dispatch = useDispatch()
 
-    const handleRemoveFavoriteItem = (event) => {
-        event.preventDefault()
+    const handleRemoveFavoriteItem = () => {
         fetch(`http://localhost:3000/api/v1/fav_goods/${id}`,{
-            method: "DELETE",
+            method: 'DELETE',
         })
         .then((r) => r.json())
         .then((item) => {
             dispatch(deleteFavGood(item))
+            console.log(item)
         })
     }
 
