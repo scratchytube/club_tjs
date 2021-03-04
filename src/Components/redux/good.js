@@ -9,9 +9,14 @@ const goodSlice = createSlice({
     reducers: {
         addGoods: (state, action) => {
             state.items = action.payload
+        },
+        addLike: (state, action) => {
+            const updatedObject = state.items.find((itemToLike) => itemToLike.id === action.payload.id)
+            updatedObject.likes = updatedObject.likes + 1
+            return console.log(updatedObject.likes)
         }
     }
 })
 
-export const { addGoods } = goodSlice.actions
+export const { addGoods, addLike } = goodSlice.actions
 export default goodSlice.reducer

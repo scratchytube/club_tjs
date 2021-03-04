@@ -14,6 +14,7 @@ const favGoodsSlice = createSlice ({
             const updatedFavGoods = state.goods.filter((good) => good.id !== action.payload.id)
             state.goods = updatedFavGoods
         }
+        
     }
 })
 

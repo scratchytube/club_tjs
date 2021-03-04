@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 
 const NavBar = ({ user }) => {
 
-    console.log(user)
     return (
         <header>
             <div className="navbar" >

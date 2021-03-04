@@ -21,7 +21,7 @@ const ProfileFavoriteGoods = ({ item }) => {
         <div>
             <h3>{name}</h3>
             <img src={image} alt={name} />
-            <button>{likes}</button>
+            <p>{likes} cookie Jars</p>
             <button>Add a little note to self</button>
             <button onClick={handleRemoveFavoriteItem} >Remove from favs</button>
         </div>
