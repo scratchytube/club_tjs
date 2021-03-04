@@ -14,7 +14,6 @@ const ProfileFavoriteGoods = ({ item }) => {
         .then((r) => r.json())
         .then((item) => {
             dispatch(deleteFavGood(item))
-            console.log(item)
         })
     }
 

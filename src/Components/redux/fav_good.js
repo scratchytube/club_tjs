@@ -13,7 +13,6 @@ const favGoodsSlice = createSlice ({
         deleteFavGood: (state, action) => {
             const updatedFavGoods = state.goods.filter((good) => good.id !== action.payload.id)
             state.goods = updatedFavGoods
-            console.log(updatedFavGoods)
         }
     }
 })

@@ -9,8 +9,8 @@ const Profile = () => {
     const profileFavoriteGoods = useSelector((state) => state.favGoods.goods)
     const myFavoriteRecipes = useSelector((state) => state.favRecipes.myFavRecipes)
 
-    console.log("hiiii", profileFavoriteGoods)
-    console.log(myFavoriteRecipes)
+    console.log(profileFavoriteGoods)
+    console.log("hiiii", myFavoriteRecipes)
 
     // delete fav good from profile
     // const onDeleteFavItem = (itemToDelete) => {
@@ -24,7 +24,7 @@ const Profile = () => {
         <ProfileFavoriteGoods key={item.id} item={item} />
     ))
     const allMyFavoriteRecipes = myFavoriteRecipes.map((rec) => (
-        <ProfileFavoritesRecipes key={rec.id} recipes={rec.recipe}/>
+        <ProfileFavoritesRecipes key={rec.id} recipes={rec}/>
     ))
 
 
