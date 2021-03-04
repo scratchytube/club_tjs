@@ -12,8 +12,6 @@ const ProfileFavoritesRecipes = ({ recipes }) => {
         setShowDirections((showDirections) => !showDirections)
     }
 
-    console.log(id)
-
     const handleRemoveRecFavorite =() => {
         fetch(`http://localhost:3000/api/v1/fav_recipes/${id}`, {
             method: 'DELETE',

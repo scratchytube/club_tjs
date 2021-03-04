@@ -10,14 +10,7 @@ const Profile = () => {
     const myFavoriteRecipes = useSelector((state) => state.favRecipes.myFavRecipes)
 
     console.log(profileFavoriteGoods)
-    console.log("hiiii", myFavoriteRecipes)
-
-    // delete fav good from profile
-    // const onDeleteFavItem = (itemToDelete) => {
-    //     console.log(itemToDelete)
-    //     const updatedFavGoodArray = profileFavoriteGoods.filter((good) => good.id !== itemToDelete.id )
-    //     dispatch(addFavGoods(updatedFavGoodArray))
-    // }
+    console.log(myFavoriteRecipes)
     
     // our iterations from redux
     const allMyFavoriteItems = profileFavoriteGoods.map((item) => (
