@@ -20,8 +20,7 @@ const ProfileFavoritesRecipes = ({ recipes }) => {
             .then((recipeToDelete) => {
                 dispatch(deleteFavRecipes(recipeToDelete))
                 console.log(recipeToDelete)
-            
-        })
+            })
 
     }
     

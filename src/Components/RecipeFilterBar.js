@@ -5,7 +5,7 @@ const RecipeFilterBar = ({ setRecipeSearch }) => {
         <div>
             <input 
             type="text"
-            placeholder="Type in an ingredient and we'll find a recipe with it"
+            placeholder="What you thinkin"
             onChange={(e) => setRecipeSearch(e.target.value)}
             />
         </div>

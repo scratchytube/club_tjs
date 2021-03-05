@@ -13,7 +13,7 @@ const goodSlice = createSlice({
         addLike: (state, action) => {
             const updatedObject = state.items.find((itemToLike) => itemToLike.id === action.payload.id)
             updatedObject.likes = updatedObject.likes + 1
-            return console.log(updatedObject.likes)
+            // return console.log(updatedObject.likes)
         }
     }
 })
