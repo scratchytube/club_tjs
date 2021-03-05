@@ -31,15 +31,14 @@ const Goods = ({ user }) => {
         dispatch(addGoods(brandNewGoodArray))
     }
     
-    // adding a sort feature
+    // sort the array by likes
     const handleSortPopular = () => {
         const sortedGoods = [...goods].sort((a,b) => {
             return b.likes - a.likes
         })
         dispatch(addGoods(sortedGoods))
         }
-
-        const handleSortNotPoppin = () => {
+    const handleSortNotPoppin = () => {
             const sortedNotSoGood = [...goods].sort((a,b) => {
                 return a.likes - b.likes
             })
