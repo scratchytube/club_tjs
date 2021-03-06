@@ -3,11 +3,10 @@ import { useDispatch } from 'react-redux'
 import { addComment, deleteFavGood } from '../Components/redux/fav_good'
 
 const ProfileFavoriteGoods = ({ item }) => {
-    const { name, image, likes, note } = item.good
-    const { id } = item
+    const { name, image, likes } = item.good
+    const { id, note } = item
     const [comment, setComment] = useState("")
-    const [showComment, setShowComment] = useState(false)
-    const [toggleCommentField, setToggleCommentField] = useState(true)
+    const [toggleCommentField, setToggleCommentField] = useState(false)
     const dispatch = useDispatch()
 
     console.log(item)
@@ -35,7 +34,7 @@ const ProfileFavoriteGoods = ({ item }) => {
         .then(updatedObject => {
             dispatch(addComment(updatedObject))
         })
-        setShowComment((showComment) => !showComment)
+        setToggleCommentField((toggleField) => !toggleField)
     }
 
     const toggleField = () => {
@@ -47,7 +46,7 @@ const ProfileFavoriteGoods = ({ item }) => {
             <h3>{name}</h3>
             <img src={image} alt={name} />
             <p>{likes} cookie Jars</p>
-            { showComment ? (<p>{note}</p>) : (null) }
+             <p>{note}</p> 
              { toggleCommentField ? 
              <div>
                 <form onSubmit={handleEditComment}>

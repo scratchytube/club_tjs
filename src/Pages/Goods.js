@@ -4,7 +4,6 @@ import { addGoods } from '../Components/redux/good'
 // Components
 import GoodsCard from '../Components/GoodsCard'
 import NewGoods from '../Components/NewGoods'
-// import GoodsFavorites from '../Components/GoodsFavorites'
 
 const Goods = ({ user }) => {
     const dispatch = useDispatch()
