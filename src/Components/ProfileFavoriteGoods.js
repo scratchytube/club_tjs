@@ -52,7 +52,7 @@ const ProfileFavoriteGoods = ({ item }) => {
                 <form onSubmit={handleEditComment}>
                     <textarea name="comment" placeholder={comment} value={comment} onChange={(e) => setComment(e.target.value)} />
                 </form>
-                <button name="submit" type="submit" onClick={handleEditComment}>save</button>
+                <button name="saveButton" type="submit" onClick={handleEditComment}>save</button>
             </div>
             : null}
             <button onClick={toggleField} >{ toggleCommentField ? "Eh nevermind" : "Note to Self" }</button>
