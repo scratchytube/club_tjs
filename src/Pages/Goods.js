@@ -4,6 +4,7 @@ import { addGoods } from '../Components/redux/good'
 // Components
 import GoodsCard from '../Components/GoodsCard'
 import NewGoods from '../Components/NewGoods'
+import GoodsFavorites from '../Components/GoodsFavorites'
 
 const Goods = ({ user }) => {
     const dispatch = useDispatch()
@@ -52,6 +53,7 @@ const Goods = ({ user }) => {
             <button onClick={handleSortNotPoppin} >Lemme see least popular</button>
             <button onClick={handleToggleForm}>{ showForm ? ("Eh changed my mind") : ("Add a new item you found!")}</button> 
             { showForm ? (<NewGoods handleToggleForm={handleToggleForm} onHandleNewGood={handleNewGood} />) : null}
+            <GoodsFavorites />
             {singleGoodCard}
         </div>
     )
