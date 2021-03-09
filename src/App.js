@@ -15,7 +15,6 @@ import Resources from './Pages/Resources'
 import Profile from './Pages/Profile'
 import Auth from './Pages/Auth'
 // CSS
-import './App.css';
 
 
 const App = () => {
