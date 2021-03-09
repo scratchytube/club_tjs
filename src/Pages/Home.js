@@ -1,10 +1,11 @@
 import React from 'react'
 import AboutUs from '../Components/AboutUs'
+import HomeCarousel from '../Components/HomeCarousel'
 
 const Home = () => {
     return (
         <div className="home">
-            <h2>this me from the home page</h2>
+            <HomeCarousel />
             <AboutUs />
         </div>
     )

@@ -2,6 +2,8 @@
     font-size: 1.15rem;
     font-weight: 500;
     letter-spacing: .1rem;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, .1);
+    z-index: 1;
 }
 
 .navbar-brand img {
@@ -10,9 +12,11 @@
 
 .nav-item {
     padding: .5rem;
+    color: #14213d !important;
 }
 
+.nav-item.active, 
 .nav-item:hover {
-    color: firebrick;
+    color: #4981b3 !important;
     text-decoration: none;
 }
