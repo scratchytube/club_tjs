@@ -4,7 +4,10 @@ import { addGoods } from '../Components/redux/good'
 // Components
 import GoodsCard from '../Components/GoodsCard'
 import NewGoods from '../Components/NewGoods'
-import GoodsFavorites from '../Components/GoodsFavorites'
+// Bootstrap
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+
 
 const Goods = ({ user }) => {
     const dispatch = useDispatch()
@@ -53,8 +56,13 @@ const Goods = ({ user }) => {
             <button onClick={handleSortNotPoppin} >Lemme see least popular</button>
             <button onClick={handleToggleForm}>{ showForm ? ("Eh changed my mind") : ("Add a new item you found!")}</button> 
             { showForm ? (<NewGoods handleToggleForm={handleToggleForm} onHandleNewGood={handleNewGood} />) : null}
-            <GoodsFavorites />
-            {singleGoodCard}
+            <section id="gallery" className="mt-5">
+                <Container>
+                    <Row className="my-5">
+                            {singleGoodCard}
+                    </Row>
+                </Container>
+            </section>
         </div>
     )
 }

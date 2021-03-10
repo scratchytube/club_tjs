@@ -2,7 +2,10 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addFavGoods } from '../Components/redux/fav_good'
 import { addLike } from '../Components/redux/good'
-
+// Bootstrap
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
 
 const GoodsCard = ({ oneGood, user }) => {
     const { id, name, image, likes} = oneGood
@@ -52,12 +55,16 @@ const GoodsCard = ({ oneGood, user }) => {
 
     
     return (
-        <div>
-            <h3>{name}</h3>
-            <img src={image} alt={name} />
-            { user ? <button onClick={handleLikesClick}>{likes}</button> : null }
-            { user ? <button onClick={() => handleAddFavorites(oneGood)} >Add to my Favorites</button> : null}
-        </div>
+        <Col className="col-md-4">
+            <Card>
+                <Card.Img variant="top" style={{ maxWidth: "30vw", maxHeight: "35vh" }} src={image} alt={name} />
+                <Card.Body>
+                <Card.Title>{name}</Card.Title>
+                { user ? <Button onClick={handleLikesClick} className="far fa-heart" variant="outline-danger">{likes}</Button> : null }
+                { user ? <Button onClick={() => handleAddFavorites(oneGood)} variant="outline-danger" >Add to my Favorites</Button> : null}
+                </Card.Body>
+            </Card>
+        </Col>
     )
 }
 

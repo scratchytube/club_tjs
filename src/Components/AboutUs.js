@@ -20,7 +20,7 @@ const AboutUs = () => {
                     <Button variant="outline-danger">New Goods</Button>
                 </Col>
 
-                <Col className="col-md-4 my-4 align-items-center">
+                <Col className="col-md-4 my-4">
                     <img src={RecipeSorta} alt="cart" className="w-100" />
                     <h4 className="my-4">The Delightful Recipes</h4>
                     <p>We put together a comprehsive list of our favorite Trader Joe Recipes here. Come check it out!</p>
