@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import {useSelector, useDispatch } from 'react-redux'
 import { addRecipes } from '../Components/redux/fav_recipe'
+// Bootstrap
+import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 const RecipeCard = ({ oneRecipe, user }) => {
     const { title, image, ingredients, directions} = oneRecipe
@@ -40,14 +44,16 @@ const RecipeCard = ({ oneRecipe, user }) => {
     }
 
     return (
-        <div>
-            <h3>{title}</h3>
-            <img src={image} alt={title} />
-            <h5>{ingredients}</h5>
-            {showDirections ? (<p>{directions}</p>) : (null)}
-            <button onClick={handleToggleDirections}>{ showDirections ? ("Close Directions") : ("Show me the way!")}</button>
-            <button onClick={() => handleAddRecipeFavorite(oneRecipe)} >Add Me To Favorites!</button>
-        </div>
+        <Col className="col-md-6 mt-5">
+            <Card>
+                <Card.Header className="text-center">{title}</Card.Header>
+                <Card.Img src={image} alt={title} />
+            <Card.Text className="text-center">{ingredients}</Card.Text>
+            {showDirections ? ( <Card.Text>{directions}</Card.Text>) : (null)}
+            <Button variant="outline-danger" onClick={handleToggleDirections}>{ showDirections ? ("Close Directions") : ("Show me the way!")}</Button>
+            <Button variant="outline-success" onClick={() => handleAddRecipeFavorite(oneRecipe)} >Add Me To Favorites!</Button>
+            </Card>
+        </Col>
     )
 }
 

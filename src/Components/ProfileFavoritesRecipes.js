@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addRecipeNote, deleteFavRecipes } from '../Components/redux/fav_recipe'
+// Bootstrap
+import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 const ProfileFavoritesRecipes = ({ recipes }) => {
     const { title, image, ingredients, directions } = recipes.recipe
@@ -49,9 +53,10 @@ const ProfileFavoritesRecipes = ({ recipes }) => {
     
 
     return (
-        <div>
-            <h3>{title}</h3>
-            <img src={image} alt={title} />
+        <Col className="col-md-12 mt-5">
+            <Card>
+            <Card.Header>{title}</Card.Header>
+            <Card.Img src={image} alt={title}/>
             <p>{note}</p> 
             {toggleNote ? 
             <div>
@@ -66,7 +71,8 @@ const ProfileFavoritesRecipes = ({ recipes }) => {
             <button onClick={toggleFavRecipeDirections}> {showDirections ? ("Close Directions") : ("Show Directions")}</button>
             <button onClick={toggleTheNote} >{toggleNote ? "Eh nevermind" : "Note to Self"}</button>
             <button onClick={handleRemoveRecFavorite} >This ain't no favorite of mine</button>
-        </div>
+            </Card>
+        </Col>
     )
 }
 

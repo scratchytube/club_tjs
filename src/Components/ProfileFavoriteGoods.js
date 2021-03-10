@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addComment, deleteFavGood } from '../Components/redux/fav_good'
+// BootStrap 
+import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 const ProfileFavoriteGoods = ({ item }) => {
     const { name, image, likes } = item.good
@@ -42,7 +46,8 @@ const ProfileFavoriteGoods = ({ item }) => {
     }
 
     return (
-        <div>
+        <Col className="col-md-6 mt-5">
+            <Card>
             <h3>{name}</h3>
             <img src={image} alt={name} />
             <p>{likes} cookie Jars</p>
@@ -57,7 +62,8 @@ const ProfileFavoriteGoods = ({ item }) => {
             : null}
             <button onClick={toggleField} >{ toggleCommentField ? "Eh nevermind" : "Note to Self" }</button>
             <button onClick={handleRemoveFavoriteItem} >Remove from favs</button>
-        </div>
+            </Card>
+        </Col>
     )
 }
 

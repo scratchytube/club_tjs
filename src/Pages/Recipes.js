@@ -3,9 +3,11 @@ import { useSelector } from 'react-redux'
 // Components
 import RecipeFilterBar from '../Components/RecipeFilterBar'
 import RecipeCard from '../Components/RecipeCard'
-import RecipeFavs from '../Components/RecipeFavs'
 //CSS
 import './Recipes.css'
+// BootStrap
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
     const Recipe = ({ user }) => {
     const [recipeSearch, setRecipeSearch] = useState("")
@@ -24,10 +26,14 @@ import './Recipes.css'
 
     return (
         <div className="recipe">
-                <RecipeFavs />
                 <h2>Here's some recipes TJ's fam</h2>
                 <RecipeFilterBar setRecipeSearch={setRecipeSearch} />
-                {recipeArray}
+
+                <Container>
+                    <Row className="my-5">
+                        {recipeArray}
+                    </Row>
+                </Container>
         </div>
     )
 }

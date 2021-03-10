@@ -55,7 +55,7 @@ const GoodsCard = ({ oneGood, user }) => {
 
     
     return (
-        <Col className="col-md-4">
+        <Col className="col-md-4 mt-5">
             <Card>
                 <Card.Img variant="top" style={{ maxWidth: "30vw", maxHeight: "35vh" }} src={image} alt={name} />
                 <Card.Body>

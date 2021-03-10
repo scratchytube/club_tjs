@@ -3,6 +3,10 @@ import { useSelector } from 'react-redux'
 //Components
 import ProfileFavoriteGoods from '../Components/ProfileFavoriteGoods'
 import ProfileFavoritesRecipes from '../Components/ProfileFavoritesRecipes'
+// Bootstrap
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const Profile = () => {
     // from redux
@@ -24,8 +28,21 @@ const Profile = () => {
     return (
         <div className="profile" >
             <h2>it me from the profile page</h2>
-            { allMyFavoriteItems }
-            { allMyFavoriteRecipes }
+            <Container>
+                <Row className="my-5">
+                    <Col className="col-md-6 mt-5">
+                        { allMyFavoriteItems }
+                    </Col>
+                </Row>
+            </Container>
+            <Container>
+                <Row className="my-5">
+                    <Col className="col-md-6 mt-5">
+                        { allMyFavoriteRecipes }
+                    </Col>
+                </Row>
+            </Container>
+            
         </div>
     )
 }
