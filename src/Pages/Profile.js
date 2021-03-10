@@ -27,22 +27,19 @@ const Profile = () => {
 
     return (
         <div className="profile" >
-            <h2>it me from the profile page</h2>
-            <Container>
-                <Row className="my-5">
-                    <Col className="col-md-6 mt-5">
-                        { allMyFavoriteItems }
-                    </Col>
-                </Row>
-            </Container>
-            <Container>
-                <Row className="my-5">
-                    <Col className="col-md-6 mt-5">
-                        { allMyFavoriteRecipes }
-                    </Col>
-                </Row>
-            </Container>
-            
+            <h2 className="mt-5">My Favorites</h2>
+            <div className="parent-container d-flex">
+                <Container>
+                    <Row className="my-5">
+                            { allMyFavoriteItems }
+                    </Row>
+                </Container>
+                <Container>
+                    <Row className="my-5">
+                            { allMyFavoriteRecipes }
+                    </Row>
+                </Container>
+            </div>
         </div>
     )
 }

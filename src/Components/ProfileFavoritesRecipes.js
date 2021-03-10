@@ -53,26 +53,26 @@ const ProfileFavoritesRecipes = ({ recipes }) => {
     
 
     return (
-        <Col className="col-md-12 mt-5">
-            <Card>
-            <Card.Header>{title}</Card.Header>
-            <Card.Img src={image} alt={title}/>
-            <p>{note}</p> 
-            {toggleNote ? 
-            <div>
-                <form onSubmit={handleNoteComment}>
-                    <textarea name="note" placeholder={commentForRecipe} value={commentForRecipe} onChange={(e) => setCommentForRecipe(e.target.value)}/>
-                </form>
-                <button name="saveButton" type="submit" onClick={handleNoteComment}>Save</button>
-            </div>
-            : null }
-            <h5>{ingredients}</h5>
-            { showDirections ? (<p>{directions}</p>) : (null)}
-            <button onClick={toggleFavRecipeDirections}> {showDirections ? ("Close Directions") : ("Show Directions")}</button>
-            <button onClick={toggleTheNote} >{toggleNote ? "Eh nevermind" : "Note to Self"}</button>
-            <button onClick={handleRemoveRecFavorite} >This ain't no favorite of mine</button>
-            </Card>
-        </Col>
+            <Col className="col-md-12 mt-5 mr-5">
+                <Card>
+                <Card.Header>{title}</Card.Header>
+                <Card.Img src={image} alt={title}/>
+                <Card.Text className="text-center">{note}</Card.Text>
+                {toggleNote ? 
+                <div>
+                    <form onSubmit={handleNoteComment}>
+                        <textarea name="note" placeholder={commentForRecipe} value={commentForRecipe} onChange={(e) => setCommentForRecipe(e.target.value)}/>
+                    </form>
+                    <button name="saveButton" type="submit" onClick={handleNoteComment}>Save</button>
+                </div>
+                : null }
+                <h5>{ingredients}</h5>
+                { showDirections ? (<p>{directions}</p>) : (null)}
+                <Button onClick={toggleFavRecipeDirections}> {showDirections ? ("Close Directions") : ("Show Directions")}</Button>
+                <Button onClick={toggleTheNote} >{toggleNote ? "Eh nevermind" : "Note to Self"}</Button>
+                <Button onClick={handleRemoveRecFavorite} >This ain't no favorite of mine</Button>
+                </Card>
+            </Col>
     )
 }
 

@@ -47,22 +47,24 @@ const ProfileFavoriteGoods = ({ item }) => {
 
     return (
         <Col className="col-md-6 mt-5">
-            <Card>
-            <h3>{name}</h3>
-            <img src={image} alt={name} />
-            <p>{likes} cookie Jars</p>
-             <p>{note}</p> 
-             { toggleCommentField ? 
-             <div>
-                <form onSubmit={handleEditComment}>
-                    <textarea name="comment" placeholder={comment} value={comment} onChange={(e) => setComment(e.target.value)} />
-                </form>
-                <button name="saveButton" type="submit" onClick={handleEditComment}>save</button>
-            </div>
-            : null}
-            <button onClick={toggleField} >{ toggleCommentField ? "Eh nevermind" : "Note to Self" }</button>
-            <button onClick={handleRemoveFavoriteItem} >Remove from favs</button>
-            </Card>
+            
+                <Card>
+                <h3>{name}</h3>
+                <img src={image} alt={name} />
+                <p>{likes} cookie Jars</p>
+                <p>{note}</p> 
+                { toggleCommentField ? 
+                <div>
+                    <form onSubmit={handleEditComment}>
+                        <textarea name="comment" placeholder={comment} value={comment} onChange={(e) => setComment(e.target.value)} />
+                    </form>
+                    <button name="saveButton" type="submit" onClick={handleEditComment}>save</button>
+                </div>
+                : null}
+                <Button onClick={toggleField} >{ toggleCommentField ? "Eh nevermind" : "Note to Self" }</Button>
+                <Button onClick={handleRemoveFavoriteItem} >Remove from favs</Button>
+                </Card>
+            
         </Col>
     )
 }
