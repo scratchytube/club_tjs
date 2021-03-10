@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { addFavGoods } from '../Components/redux/fav_good'
 import { addLike } from '../Components/redux/good'
 
+
 const GoodsCard = ({ oneGood, user }) => {
     const { id, name, image, likes} = oneGood
     const dispatch = useDispatch()

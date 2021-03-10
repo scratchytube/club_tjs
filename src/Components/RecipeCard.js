@@ -2,11 +2,6 @@ import React, { useState } from 'react'
 import {useSelector, useDispatch } from 'react-redux'
 import { addRecipes } from '../Components/redux/fav_recipe'
 
-// bring in our fav recipes array
-// bring in our dispatch function
-// set up our fetch
-// set up our callback function that we'll put in our fetch
-
 const RecipeCard = ({ oneRecipe, user }) => {
     const { title, image, ingredients, directions} = oneRecipe
     const [showDirections, setShowDirections] = useState(false)
