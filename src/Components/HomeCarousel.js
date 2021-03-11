@@ -15,7 +15,7 @@ const HomeCarousel = () => {
 
 <Carousel id="carousel">
 
-<Carousel.Item interval="12341000">
+<Carousel.Item interval="900000000">
         <img 
         className="d-block w-100"
         src={TJFlowers} alt="flowers" />
@@ -34,7 +34,7 @@ const HomeCarousel = () => {
         </Carousel.Caption>
     </Carousel.Item>
 
-<Carousel.Item interval="12341000">
+<Carousel.Item interval="900000000">
         <img 
         className="d-block w-100"
         src={TJCart} alt="shopping cart" />
@@ -53,7 +53,7 @@ const HomeCarousel = () => {
         </Carousel.Caption>
     </Carousel.Item>
 
-    <Carousel.Item interval="12341000">
+    <Carousel.Item interval="900000000">
         <img 
         className="d-block w-100"
         src={TJOutside} alt="groceries" />

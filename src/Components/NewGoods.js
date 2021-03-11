@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Form from 'react-bootstrap/Form'
 
 const NewGoods = ({ handleToggleForm, onHandleNewGood }) => {
     
@@ -31,32 +32,36 @@ const NewGoods = ({ handleToggleForm, onHandleNewGood }) => {
                 }
 
     return (
-        <div>
-            <h2>put some new goodies here</h2>
+        <div className="d-flex justify-content-center ">
             <form onSubmit={handleGoodsSubmit} autoComplete="off">
+                <Form.Group>
                 
-                <label htmlFor="name">Name</label>
+                {/* <label htmlFor="name">Name</label> */}
                 <input 
+                placeholder="Tell us the name!"
+                className="form-control mb-4"
                 type="name"
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 />
-                {name.length === 0 ? (<p style={{ color: "red"}}>Cmon son give me a name</p>) : null}
+                {/* {name.length === 0 ? (<p style={{ color: "red"}}>Cmon son give me a name</p>) : null} */}
 
-                <label htmlFor="image">Upload an image puhlease</label>
+                {/* <label htmlFor="image">Upload an image puhlease</label> */}
                 <input
+                className="form-control"
+                placeholder="We need an image!"
                 type="img"
                 id="img"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
                 />
-                {image.length === 0 ? (<p style={{ color: "red" }}>Cmon bruh bruh add an image</p>) : null}
+                {image.length === 0 ? (<p style={{ color: "red" }}>We need an image!</p>) : null}
 
                 <button 
                 disabled={!image}
                 type="submit">Submit this new ish</button>
-
+                </Form.Group>
             </form>
         </div>
     )

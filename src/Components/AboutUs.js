@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 // Bootstrap
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -17,7 +18,8 @@ const AboutUs = () => {
                     <img src={TJAisle} alt="cart" className="w-100" />
                     <h4 className="my-4">The New Stuff</h4>
                     <p>You can find all of the new goods Trader Joes has to offer here.</p>
-                    <Button variant="outline-danger">New Goods</Button>
+                    <Link to="/goods" className="button" variant="outline-danger">New Goods</Link>
+                    {/* <Button variant="outline-danger">New Goods</Button> */}
                 </Col>
 
                 <Col className="col-md-4 my-4">
@@ -29,7 +31,7 @@ const AboutUs = () => {
 
                 <Col className="col-md-4 my-4">
                     <img src={TJAisle} alt="cart" className="w-100" />
-                    <h4 className="my-4">The New Stuff</h4>
+                    <h4 className="my-4">Store Locator</h4>
                     <p>You can find all of the new goods Trader Joes has to offer here. </p>
                     <Button variant="outline-danger">New Goods</Button>
                 </Col>

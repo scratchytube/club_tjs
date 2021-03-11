@@ -60,7 +60,7 @@ const GoodsCard = ({ oneGood, user }) => {
                 <Card.Img variant="top" style={{ maxWidth: "30vw", maxHeight: "35vh" }} src={image} alt={name} />
                 <Card.Body>
                 <Card.Title>{name}</Card.Title>
-                { user ? <Button onClick={handleLikesClick} className="far fa-heart" variant="outline-danger">{likes}</Button> : null }
+                { user ? <Button onClick={handleLikesClick} variant="outline-danger">{likes}</Button> : null }
                 { user ? <Button onClick={() => handleAddFavorites(oneGood)} variant="outline-danger" >Add to my Favorites</Button> : null}
                 </Card.Body>
             </Card>

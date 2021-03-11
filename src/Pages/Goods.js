@@ -7,6 +7,9 @@ import NewGoods from '../Components/NewGoods'
 // Bootstrap
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
+import Button from 'react-bootstrap/Button'
+
+
 
 
 const Goods = ({ user }) => {
@@ -51,10 +54,11 @@ const Goods = ({ user }) => {
 
     return(
         <div className="goods">
-            <h2>Ah yeah show me the goods</h2>
-            <button onClick={handleSortPopular}>Sort by most popular</button>
-            <button onClick={handleSortNotPoppin} >Lemme see least popular</button>
-            <button onClick={handleToggleForm}>{ showForm ? ("Eh changed my mind") : ("Add a new item you found!")}</button> 
+            <div className="d-flex ml-6">
+                <Button onClick={handleSortPopular}>Sort by most popular</Button>
+                <Button onClick={handleSortNotPoppin} >Lemme see least popular</Button>
+                <Button onClick={handleToggleForm}>{ showForm ? ("Eh changed my mind") : ("Add a new item you found!")}</Button> 
+            </div>
             { showForm ? (<NewGoods handleToggleForm={handleToggleForm} onHandleNewGood={handleNewGood} />) : null}
             <section id="gallery" className="mt-5">
                 <Container>
