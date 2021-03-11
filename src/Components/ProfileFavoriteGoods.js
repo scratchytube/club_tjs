@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 const ProfileFavoriteGoods = ({ item }) => {
-    const { name, image, likes } = item.good
+    const { name, image} = item.good
     const { id, note } = item
     const [comment, setComment] = useState("")
     const [toggleCommentField, setToggleCommentField] = useState(false)
@@ -51,7 +51,6 @@ const ProfileFavoriteGoods = ({ item }) => {
                 <Card>
                 <h3>{name}</h3>
                 <img src={image} alt={name} />
-                <p>{likes} likes</p>
                 <p>{note}</p> 
                 { toggleCommentField ? 
                 <div>
