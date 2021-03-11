@@ -8,6 +8,8 @@ import NewGoods from '../Components/NewGoods'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
+// Css
+import './Goods.css'
 
 
 
@@ -53,8 +55,11 @@ const Goods = ({ user }) => {
         }
 
     return(
-        <div className="goods">
-            <div className="d-flex ml-6">
+        <div className="goods mb-5">
+            <div className="header_goods mt-5 mb-3 ml-3">
+                <h1>The New Stuff</h1>
+            </div>
+            <div className="d-flex justify-content-center mt-3">
                 <Button onClick={handleSortPopular}>Sort by most popular</Button>
                 <Button onClick={handleSortNotPoppin} >Lemme see least popular</Button>
                 <Button onClick={handleToggleForm}>{ showForm ? ("Eh changed my mind") : ("Add a new item you found!")}</Button> 
@@ -63,7 +68,7 @@ const Goods = ({ user }) => {
             <section id="gallery" className="mt-5">
                 <Container>
                     <Row className="my-5">
-                            {singleGoodCard}
+                        {singleGoodCard}
                     </Row>
                 </Container>
             </section>

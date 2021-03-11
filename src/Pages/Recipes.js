@@ -26,7 +26,9 @@ import Row from 'react-bootstrap/Row'
 
     return (
         <div className="recipe">
-                <h2>Here's some recipes TJ's fam</h2>
+            <div className="mt-5 mb-3 ml-3">
+                <h1>Here's some recipes TJ's fam</h1>
+            </div>
                 <RecipeFilterBar setRecipeSearch={setRecipeSearch} />
 
                 <Container>

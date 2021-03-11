@@ -61,7 +61,7 @@ const GoodsCard = ({ oneGood, user }) => {
                 <Card.Body>
                 <Card.Title>{name}</Card.Title>
                 { user ? <Button onClick={handleLikesClick} variant="outline-danger">{likes}</Button> : null }
-                { user ? <Button onClick={() => handleAddFavorites(oneGood)} variant="outline-danger" >Add to my Favorites</Button> : null}
+                { user ? <Button onClick={() => handleAddFavorites(oneGood)} variant="btn btn-outline-success" >Add to my Favorites</Button> : null}
                 </Card.Body>
             </Card>
         </Col>

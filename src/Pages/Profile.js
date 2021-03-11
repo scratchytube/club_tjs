@@ -26,7 +26,7 @@ const Profile = () => {
 
     return (
         <div className="profile" >
-            <h2 className="mt-5">My Favorites</h2>
+            <h2 className="mt-5">My Favorite Favorites</h2>
             <div className="parent-container d-flex">
                 <Container>
                     <Row className="my-5">

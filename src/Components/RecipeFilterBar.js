@@ -2,7 +2,7 @@ import React from 'react'
 
 const RecipeFilterBar = ({ setRecipeSearch }) => {
     return (
-        <div>
+        <div className="d-flex justify-content-center">
             <input 
             type="text"
             placeholder="What you thinkin"

@@ -51,7 +51,7 @@ const ProfileFavoriteGoods = ({ item }) => {
                 <Card>
                 <h3>{name}</h3>
                 <img src={image} alt={name} />
-                <p>{likes} cookie Jars</p>
+                <p>{likes} likes</p>
                 <p>{note}</p> 
                 { toggleCommentField ? 
                 <div>
@@ -61,8 +61,10 @@ const ProfileFavoriteGoods = ({ item }) => {
                     <button name="saveButton" type="submit" onClick={handleEditComment}>save</button>
                 </div>
                 : null}
+                <div className="d-flex justify-content-around mb-2">
                 <Button onClick={toggleField} >{ toggleCommentField ? "Eh nevermind" : "Note to Self" }</Button>
                 <Button onClick={handleRemoveFavoriteItem} >Remove from favs</Button>
+                </div>
                 </Card>
             
         </Col>
