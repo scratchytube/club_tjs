@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addGoods } from '../Components/redux/good'
-// Components
 import GoodsCard from '../Components/GoodsCard'
 import NewGoods from '../Components/NewGoods'
-// Bootstrap
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
-// Css
 import './Goods.css'
 
 
@@ -16,13 +13,9 @@ import './Goods.css'
 
 const Goods = ({ user }) => {
     const dispatch = useDispatch()
-    // toggle Form state
     const [showForm, setShowForm] = useState(false)
-    // goods array from redux
     const goods = useSelector((state) => state.good.items)
     console.log(goods)
-    // local state for sorting users
-    // const [ sortLikedGoods, setSortLikedGoods] = useState([])
 
     const handleToggleForm = () => {
         setShowForm((showForm) => !showForm)

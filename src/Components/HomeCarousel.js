@@ -1,7 +1,7 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
-import TJFlowers from '../images/tjflowers.jpg'
-import TJCart from '../images/tjCart.jpg'
+import TJFlowers from '../images/tjflowers-min.jpg'
+import TJCart from '../images/tjCart-min.jpg'
 import './HomeCarousel.css'
 
 

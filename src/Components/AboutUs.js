@@ -1,11 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// Bootstrap
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-// import Button from 'react-bootstrap/Button'
-// images
 import TJAisle from '../images/tjAisle.jpg'
 import RecipeSorta from '../images/recipeSorta.jpg'
 
@@ -31,7 +28,7 @@ const AboutUs = () => {
                 <Col className="col-md-4 my-4">
                     <img src="https://geospatialmedia.s3.amazonaws.com/wp-content/uploads/2019/07/Apple-maps-app.png" alt="cart" className="w-100" />
                     <h4 className="my-4">Store Locator</h4>
-                    <p>View all the stores tin your area</p>
+                    <p>View all the stores in your area</p>
                     <Link to="/stores" variant="outline-danger">Store Locator</Link>
                 </Col>
 
